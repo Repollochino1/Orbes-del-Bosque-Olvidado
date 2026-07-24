@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://ya60w2rn7hso"]
+
+[ext_resource type="Texture2D" uid="uid://m2xtyy1e2fe7" path="res://AllInPNGWithOL.png" id="1_cglto"]
+[ext_resource type="Script" uid="uid://fh3ffymhmdol" path="res://orbes.gd" id="1_vgs0l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgs0l"]
+atlas = ExtResource("1_cglto")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo2ao"]
+atlas = ExtResource("1_cglto")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng253"]
+atlas = ExtResource("1_cglto")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cduma"]
+atlas = ExtResource("1_cglto")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu10i"]
+atlas = ExtResource("1_cglto")
+region = Rect2(600, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7ogn"]
+atlas = ExtResource("1_cglto")
+region = Rect2(750, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74j5k"]
+atlas = ExtResource("1_cglto")
+region = Rect2(900, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_573sh"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgs0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lo2ao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng253")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cduma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu10i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m7ogn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74j5k")
+}],
+"loop": 1,
+"name": &"orbe",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_573sh"]
+
+[node name="Orbes" type="Area2D" unique_id=142226680]
+script = ExtResource("1_vgs0l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1179868408]
+position = Vector2(-9.536743e-07, 0)
+scale = Vector2(0.114999995, 0.11833334)
+sprite_frames = SubResource("SpriteFrames_573sh")
+animation = &"orbe"
+frame_progress = 0.53696287
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=105883625]
+shape = SubResource("CircleShape2D_573sh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,10 @@
+# Ignorar carpetas de caché e importaciones de Godot 4
+.godot/
+*.import/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración de exportación personal (si la hay)
+export_presets.cfg
